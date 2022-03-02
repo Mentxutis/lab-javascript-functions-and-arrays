@@ -1,33 +1,96 @@
-// Iteration #1: Find the maximum
-function maxOfTwoNumbers() {}
+/*// Iteration #1: Find the maximum
 
-
-
+function maxOfTwoNumbers(a, b) {
+  if (a < b) {
+    console.log('El mayor es el segundo, '+ b);
+  } else {
+    console.log('El mayor es el primero, '+ a);
+  }
+}
+console.log(maxOfTwoNumbers(5, 7));
+*/
+/*
 // Iteration #2: Find longest word
+
 const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot'];
 
-function findLongestWord() {}
+function findLongestWord(array) {
+  let longitudMax = 0;
+  for (let index = 0; index < array.length; index++) {
+    const element = array[index];
+    console.log(`longitud :` + longitudMax);
+    console.log(`la palabra es : ` + element);
 
+    if (element.length > longitudMax) {
+      longitudMax = element.length;
+    }
+  }
+}
+findLongestWord(words);
+*/
+/*
+//Iteration #3: Calculate the sum
 
-
-// Iteration #3: Calculate the sum
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 
-function sumNumbers() {}
+function totalAdition(array) {
+  let sumatorio = 0;
+  for (let index = 0; index < array.length; index++) {
+    sumatorio = sumatorio + array[index];
+    console.log(`la suma es: ` + sumatorio);
+  }
 
+  //return sumatorio;
+}
+console.log(totalAdition(numbers));
+*/
 
-
+/*
 // Iteration #3.1 Bonus:
-function sum() {}
+how much is the sum of the length of all of the words in an array? What if we wanted to add boolean values to the mix? We wouldn't be able to use the same function as above, or better saying, we would have to tweak it a little bit so that it can be reused no matter what is in the array that is passed as argument when function sumNumbers() is called.
 
+Here we are applying a concept we call polymorphism, that is, dealing with a functions' input independently of the types they are passed as.
 
+Let's implement the function sum() that calculates the sum for array filled with (almost) any type of data. Note that strings should have their length added to the total, and boolean values should be coerced into their corresponding numeric values. Check the tests for more details.
+*/
+const mixedArr = [6, 12, 'miami', 1, true, 'barca', '200', 'lisboa', 8, 10];
 
+function sum(array) {
+  //recorrra la list
+  let sumaNumeritos = 0;
+  let sumaLetras = 0;
+
+  for (let index = 0; index < array.length; index++) {
+    if (index === Number) {
+      sumaNumeritos = sumaNumeritos + array[index];
+      console.log(`la suma de numeritos de la lista es` + sumaNumeritos);
+    }
+    if (index === string.length) {
+      sumaLetras = sumaLetras.length + array[index];
+      console.log(`la suma de las letras de la lista es ` + sumaLetras);
+    }
+    return sumaNumeritos + sumaLetras;
+
+    //si es num que se sumen como el ejerc anterior
+    //si es string que cuente el length y luego lo sume
+    // por ultimoo que sume los valores de las dos variables creadas
+  }
+  console.log(sum(array));
+}
+/*
 // Iteration #4: Calculate the average
 // Level 1: Array of numbers
+
+
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
+let i =0 ;
+function averageNumbers(i) {
 
-function averageNumbers() {}
-
+for (let i = 0; i < numbersAvg.length; i++) {
+    sumaTot += numbersAvg[i];
+}
+console.log(i);
+} return (i / numbersAvg.length);
 
 // Level 2: Array of strings
 const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
@@ -37,6 +100,9 @@ function averageWordLength() { }
 // Bonus - Iteration #4.1
 function avg() {}
 
+*/
+
+/*
 // Iteration #5: Unique arrays
 const wordsUnique = [
   'crab',
@@ -54,14 +120,18 @@ const wordsUnique = [
 
 function uniquifyArray() {}
 
+*/
 
+/*
 
 // Iteration #6: Find elements
 const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
 
 function doesWordExist() {}
 
+*/
 
+/*
 
 // Iteration #7: Count repetition
 const wordsCount = [
@@ -80,7 +150,9 @@ const wordsCount = [
 
 function howManyTimes() {}
 
+*/
 
+/*
 
 // Iteration #8: Bonus
 const matrix = [
@@ -112,9 +184,12 @@ function greatestProduct() {}
 
 
 // The following is required to make unit tests work.
-/* Environment setup. Do not modify the below code. */
-if (typeof module !== 'undefined') {
-  module.exports = {
+*/
+/* Environment setup. Do not modify the below code. 
+if (typeof module !== 'undefined') 
+{
+  module.exports = 
+  {
     maxOfTwoNumbers,
     findLongestWord,
     sumNumbers,
@@ -128,3 +203,7 @@ if (typeof module !== 'undefined') {
     greatestProduct
   };
 }
+
+
+}
+*/
