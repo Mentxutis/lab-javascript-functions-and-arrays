@@ -1,4 +1,4 @@
-/*// Iteration #1: Find the maximum
+// Iteration #1: Find the maximum
 
 function maxOfTwoNumbers(a, b) {
   if (a < b) {
@@ -8,8 +8,7 @@ function maxOfTwoNumbers(a, b) {
   }
 }
 console.log(maxOfTwoNumbers(5, 7));
-*/
-/*
+
 // Iteration #2: Find longest word
 
 const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot'];
@@ -27,8 +26,8 @@ function findLongestWord(array) {
   }
 }
 findLongestWord(words);
-*/
-/*
+
+
 //Iteration #3: Calculate the sum
 
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
@@ -40,69 +39,135 @@ function totalAdition(array) {
     console.log(`la suma es: ` + sumatorio);
   }
 
-  //return sumatorio;
+  
 }
 console.log(totalAdition(numbers));
-*/
 
-/*
+
+
 // Iteration #3.1 Bonus:
-how much is the sum of the length of all of the words in an array? What if we wanted to add boolean values to the mix? We wouldn't be able to use the same function as above, or better saying, we would have to tweak it a little bit so that it can be reused no matter what is in the array that is passed as argument when function sumNumbers() is called.
+//how much is the sum of the length of all of the words in an array? What if we wanted to add boolean values to the mix? We wouldn't be able to use the same function as above, or better saying, we would have to tweak it a little bit so that it can be reused no matter what is in the array that is passed as argument when function sumNumbers() is called.
+//Here we are applying a concept we call polymorphism, that is, dealing with a functions' input independently of the types they are passed as.
+//Let's implement the function sum() that calculates the sum for array filled with (almost) any type of data. Note that strings should have their length added to the total, and boolean values should be coerced into their corresponding numeric values. Check the tests for more details.
 
-Here we are applying a concept we call polymorphism, that is, dealing with a functions' input independently of the types they are passed as.
-
-Let's implement the function sum() that calculates the sum for array filled with (almost) any type of data. Note that strings should have their length added to the total, and boolean values should be coerced into their corresponding numeric values. Check the tests for more details.
-*/
 const mixedArr = [6, 12, 'miami', 1, true, 'barca', '200', 'lisboa', 8, 10];
+function sum(mixedArr) {
+ let suma= 0;
+ mixedArr.forEach ((element) =>{
+   console.log (typeof element);
+   switch (typeof element) {
+     case "number":
+       suma= suma + element:
 
-function sum(array) {
-  //recorrra la list
-  let sumaNumeritos = 0;
-  let sumaLetras = 0;
+       break;
 
-  for (let index = 0; index < array.length; index++) {
-    if (index === Number) {
-      sumaNumeritos = sumaNumeritos + array[index];
-      console.log(`la suma de numeritos de la lista es` + sumaNumeritos);
-    }
-    if (index === string.length) {
-      sumaLetras = sumaLetras.length + array[index];
-      console.log(`la suma de las letras de la lista es ` + sumaLetras);
-    }
-    return sumaNumeritos + sumaLetras;
+       case "string":
+       suma= suma+ element.length:
+       
+       break;
+       case "boolean":
+       if (element===true){
+         suma= suma +1;
+       }else{
+         suma+=0
+       }
+       break;
+   console.log (suma);
+   } return suma
+   
+ }console.log (sum(mixedArr));
 
-    //si es num que se sumen como el ejerc anterior
-    //si es string que cuente el length y luego lo sume
-    // por ultimoo que sume los valores de las dos variables creadas
-  }
-  console.log(sum(array));
-}
-/*
+
+
+
+
+  
+      
+    
+  
+
+
+
 // Iteration #4: Calculate the average
 // Level 1: Array of numbers
 
 
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
-let i =0 ;
-function averageNumbers(i) {
+function findMedia(numbersAvg) {
+  let suma =0 ;
+  let media=0:
 
-for (let i = 0; i < numbersAvg.length; i++) {
-    sumaTot += numbersAvg[i];
+  numbersAvg.forEach((element) => {
+    suma= suma+element;
+  });
+  media= suma/numbersAvg.length;
+
+  console.log (media);
+  return media;
 }
-console.log(i);
-} return (i / numbersAvg.length);
+findMedia(numbersAvg);
 
-// Level 2: Array of strings
-const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
 
-function averageWordLength() { }
+
+
+
+  // Level 2: Array of strings
+  const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
+  
+  function averageWordLength(wordsArr) { 
+    let suma= 0;
+    let media= 0;
+
+  }
+  wordsArr.forEach((word) =>{
+    suma+= words.length;
+
+  });
+  media= suma/words.length;
+  console.log (media);
+  
+
+
 
 // Bonus - Iteration #4.1
-function avg() {}
 
-*/
+const mixedArr = [6, 12, 'miami', 1, true, 'barca', '200', 'lisboa', 8, 10];
 
-/*
+
+function avg(mixedArr) {
+
+  let suma =0;
+  let media=0;
+  mixedArr.forEach(element) =>{
+    console.log (tipeof element);
+
+    switch (typeof element) {
+      case "number":
+        suma+= element;
+        
+        break;
+        case "string":
+          suma+= element.length;
+          break;
+
+          case "boolean":
+            if (element===true){
+              suma+=1;
+            }else{
+              suma+=0;
+            }
+
+        break;
+        return suma;
+    } media= suma/mixedArr.length;
+  }
+} console.log (media)
+
+
+
+
+
+
 // Iteration #5: Unique arrays
 const wordsUnique = [
   'crab',
@@ -118,20 +183,38 @@ const wordsUnique = [
   'bring'
 ];
 
-function uniquifyArray() {}
+function uniquifyArray(array) {
+  let newArray=[];
+  array.forEach ((element) => {
+    if (newArray.includes(element)){
+      console.log ( `${element} está duplcado`);
+    }else{
+      newArray.push(element);
+     }
+    });
+    return newArray;
+}
 
-*/
 
-/*
+
+
+
+
+
 
 // Iteration #6: Find elements
 const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
 
 function doesWordExist() {}
 
-*/
 
-/*
+
+
+
+
+
+
+
 
 // Iteration #7: Count repetition
 const wordsCount = [
